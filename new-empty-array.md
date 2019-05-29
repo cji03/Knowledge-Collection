@@ -29,4 +29,10 @@ function baseRange(start, end, step) {
   }
   return result;
 }
+
+function range(start, end) {
+  if(start === end) return [];
+    
+  return [start, ...range(start + 1, end)];
+}
 ```
