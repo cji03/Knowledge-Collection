@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
           const lazyImage = entry.target;
 
           lazyImage.src = lazyImage.dataset.src;
-          lazyImage.classList.remove("lazy");
           lazyImageObserver.unobserve(lazyImage);
         }
       });
@@ -28,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     lazyImages.forEach(function(lazyImage) {
       lazyImageObserver.observe(lazyImage);
+      lazyImage.onload = () => {
+        lazyImage.classList.remove('lazy');
+      };
+      // 在img加载完成后去掉占位的class
     });
   }
 });
