@@ -23,7 +23,7 @@ typeof new Number(11) //"object"
 
 ### instanceof
 
-> instanceof检测的是原型, 只能用来判断两个对象是否有实例关系，不能用来作类型判断。
+> instanceof检测的是原型, 判断双方沿着原型链向上寻找，如果有相同的引用，则返回true。只能用来判断两个对象是否有实例关系，不能用来作类型判断。
 
 ```javascript
 'ssdfsa' instanceof String //false
