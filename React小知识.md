@@ -1,1 +1,7 @@
 1. 由React自身控制的事件处理函数中，`this.setstate()`并不会立即执行更新操作，而是会放入更新队列中（异步，合并更新）。如果是在`addEventListener`或者是`setTimeout/setInterval`中的`setstate`操作会立即执行更新操作。（React自身事件处理函数/生命周期函数触发时会赋值`isBatchingUpdates`为`true`，此时不直接执行更新state）
+
+2. 不影响页面UI的数据可以不用放到state中，可以放到this中。
+
+Redux
+
+redux-thunk中间件实现异步dispatch，使得dispatch可以接受异步函数。
