@@ -8,7 +8,7 @@ const haha = new Person();
 • 通过 this 将属性和方法添加至这个对象.
 • 最后返回 this 指向的新对象，也就是实例.
 
-```
+```JavaScript
 let newMethod = function (Parent, ...rest) {
     // 1.以构造器的prototype属性为原型，创建新对象；
     let child = Object.create(Parent.prototype);
