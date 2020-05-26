@@ -12,6 +12,10 @@
 - 所以相关api操作，可以放至`componentDidMount`中。
 -  often misused and not in line with the upcoming feature of async rendering. These cause unnecessary multiple time component re-rendering which hampers the performance.
 
+#### pureComponent
+
+The major difference between React.PureComponent and React.Component is PureComponent does a shallow comparison on state change. It means that when comparing scalar values it compares their values, but when comparing objects it compares only references. It helps to improve the performance of the app.
+
 ### Redux
 
 redux-thunk中间件实现异步dispatch，使得dispatch可以接受异步函数。
